@@ -1,0 +1,346 @@
+/**************************************/
+/* BTS IMPORT */
+* {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #333333;
+  background-color: #fff;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #2a6496;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.img-responsive {
+  display: block;
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-rounded {
+  border-radius: 6px;
+}
+
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+/* /BTS IMPORT */
+/**************************************/
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.key {
+  position: fixed;
+  list-style: none;
+  font-size: 12px;
+  color: #666;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin: 0;
+  padding: 7px;
+}
+.key .male:before, .key .female:before, .key .decendent:before, .key .first_marriage:before, .key .spouse_previous_marriage:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  margin: 0 5px 0 0;
+  display: inline-block;
+}
+.key .male:before {
+  background: #e3edf7;
+}
+.key .female:before {
+  background: #f7e3f3;
+}
+.key .decendent:before {
+  background: #c9f2d7;
+}
+.key .first_marriage:before {
+  background: #c9f2d7;
+}
+.key .spouse_previous_marriage:before {
+  background: #fbd2a1;
+}
+
+.resize-container {
+  width: 100%;
+  cursor: move;
+}
+.resize-container .tree {
+  width: 50000px;
+}
+.resize-container .tree ul {
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.resize-container .tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+.resize-container .tree ul ul.twice_married::before {
+  left: 60%;
+}
+.resize-container .tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.resize-container .tree li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%;
+  height: 20px;
+}
+.resize-container .tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%;
+  height: 20px;
+  right: auto;
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+.resize-container .tree li:only-child {
+  padding-top: 0;
+}
+.resize-container .tree li:only-child::after {
+  display: none;
+}
+.resize-container .tree li:only-child::before {
+  display: none;
+}
+.resize-container .tree li:first-child::before {
+  border: 0 none;
+}
+.resize-container .tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+.resize-container .tree li:last-child::after {
+  border: 0 none;
+}
+.resize-container .tree li:last-child::before {
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.resize-container .tree li .married {
+  font-size: 10px;
+  color: #666;
+}
+.resize-container .tree li a {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-block;
+  border-radius: 5px;
+  max-width: 100px;
+  vertical-align: top;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.resize-container .tree li a.m {
+  background: #e3edf7;
+}
+.resize-container .tree li a.m:hover {
+  background: #c8e4f8;
+}
+.resize-container .tree li a.f {
+  background: #f7e3f3;
+}
+.resize-container .tree li a.f:hover {
+  background: #f2c9ea;
+}
+.resize-container .tree li a.first_marriage {
+  background: #c9f2d7;
+}
+.resize-container .tree li a.da {
+  position: relative;
+}
+.resize-container .tree li a.da:after {
+  background: #fff;
+  border-left: 1px solid #ccc;
+  bottom: -22px;
+  content: "";
+  height: 21px;
+  position: absolute;
+  right: -3px;
+  width: 50px;
+  z-index: 5;
+}
+.resize-container .tree li a.stella {
+  position: relative;
+}
+.resize-container .tree li a.stella:after {
+  background: #ccc;
+  content: "";
+  height: 1px;
+  position: absolute;
+  left: 98px;
+  top: 20px;
+  width: 247px;
+}
+.resize-container .tree li a.spouse_previous_marriage {
+  background: #fbd2a1;
+}
+.resize-container .tree li a.spouse_previous_marriage.mark:before, .resize-container .tree li a.spouse_previous_marriage.mark:after {
+  position: absolute;
+  content: "";
+}
+.resize-container .tree li a.spouse_previous_marriage.mark:before {
+  background: #ccc;
+  height: 73px;
+  left: 49%;
+  top: -55px;
+  width: 1px;
+  z-index: 5;
+}
+.resize-container .tree li a.spouse_previous_marriage.mark:after {
+  background: #fff none repeat scroll 0 0;
+  height: 30px;
+  right: 50px;
+  top: -10px;
+  width: 170px;
+  z-index: 1;
+}
+.resize-container .tree li a:hover {
+  background: #c9f2d7;
+  color: #000;
+  border: 1px solid #94a0b4;
+}
+
+/**************************************/
+/* MEDIA QUERIES */
+@media (max-width: 767px) {
+  /* TABLE STYLES */
+  .table_wrapper {
+    max-width: 100%;
+    overflow: scroll;
+    overflow-y: auto;
+  }
+}
+/* /MEDIA QUERIES */
+/**************************************/
